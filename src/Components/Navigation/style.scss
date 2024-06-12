@@ -1,0 +1,39 @@
+.nav-wrapper {
+    border-bottom: 1px solid #69d171;
+    box-shadow: 0px 0px 4px 1px #69d171;
+}
+
+.project-text {
+    color: #69d171;
+    font-family: 'Pacifico';
+    font-size: 30px;
+}
+
+.rec-text {
+    color: #B0B0B0;
+    font-family: 'Pacifico';
+    font-size: 30px;
+}
+
+.navigation-link {
+    color: #69d171 !important;
+    margin-right: 20px;
+    // border-right: 1px solid #69d171 !important;
+}
+
+.nav-links-container {
+    margin-left: 20px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation-link:hover {
+    color: #55ab5c !important;
+
+}
+
+.btn-success {
+    background-color: #69d171 !important;
+    border: 1px solid #69d171 !important
+}
