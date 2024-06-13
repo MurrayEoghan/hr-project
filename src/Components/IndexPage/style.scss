@@ -1,0 +1,30 @@
+.apply-button {
+    background-color: #3ba844;
+    border: #3ba844;
+    color: white;
+    float: right;
+}
+
+.apply-button:hover {
+    color: #3ba844 !important
+}
+
+.applicant-count-text {
+    position: relative;
+    top: 6px;
+}
+
+.job-listing {
+    position: relative;
+    top: 5px;
+    margin-bottom: none !important;
+}
+
+.ui.fluid.card {
+    border-radius: 0 !important;
+}
+
+.ui.card {
+    margin: 0.5rem !important;
+    margin-top: 1rem !important;
+}
