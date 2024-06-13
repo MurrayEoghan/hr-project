@@ -1,2 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
-@import 'custom'
+@import 'custom';
+
+.main-app-body {
+    position: relative;
+    height: 90vh;
+    top: 20px;
+    
+}

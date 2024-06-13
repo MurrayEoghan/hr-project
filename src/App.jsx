@@ -7,9 +7,11 @@ function App() {
   return (
     <div className="App">
       <Navigation />
-      <Routes>
-        <Route path='/' element={<IndexPage />} />
-      </Routes>
+      <body className='main-app-body'>
+        <Routes>
+          <Route path='/' element={<IndexPage />} />
+        </Routes>
+      </body>
     </div>
   );
 }
