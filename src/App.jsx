@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
-import IndexPage from './Components/IndexPage';
+import IndexPage from './Components/IndexPage/IndexPage';
 import Navigation from './Components/Navigation/Navigation';
 import './App.scss';
 

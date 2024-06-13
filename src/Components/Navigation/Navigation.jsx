@@ -21,13 +21,6 @@ export default function Navigation() {
         label: 'Log Out'
     }]
 
-    // const items = (
-    //     <Menu>
-    //         <Menu.Item>Messages</Menu.Item>
-    //         <Menu.Item>Pending Requests</Menu.Item>
-    //         <Menu.Item>Status Centre</Menu.Item>
-    //     </Menu>
-    // )
 
     return (
         <Navbar className="nav-wrapper">
@@ -40,7 +33,7 @@ export default function Navigation() {
           </div>
           <Navbar.Collapse className="justify-content-end">
             <Dropdown menu={{items}} className='user-dropdown'>
-                <Space><UserOutlined />Username</Space>
+                <Space><UserOutlined /><span className='username-text'>Username</span></Space>
             </Dropdown>
           </Navbar.Collapse>
         </Container>

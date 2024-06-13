@@ -1,6 +1,6 @@
 .nav-wrapper {
     border-bottom: 1px solid #3ba844;
-    box-shadow: 0px 0px 4px 1px #3ba844;
+    position: sticky;
 }
 
 .project-text {
@@ -10,13 +10,17 @@
 }
 
 .rec-text {
-    color: #B0B0B0;
+    color: #929292;
     font-family: 'Pacifico';
     font-size: 30px;
 }
 
+.username-text {
+    color: #717070;
+}
+
 .navigation-link {
-    color: #3ba844 !important;
+    color: #717070 !important;
     margin-right: 20px;
     font-size: 1rem !important;
     font-weight: 500 !important;
