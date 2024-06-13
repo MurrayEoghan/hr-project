@@ -1,9 +1,27 @@
 import React from 'react'
-import {Container, Nav, Navbar, Button} from 'react-bootstrap'
+import {Container, Nav, Navbar} from 'react-bootstrap'
+import { Dropdown, Space, Menu } from 'antd'
+import { UserOutlined } from '@ant-design/icons'
 import './style.scss'
 
 
 export default function Navigation() {
+
+    const items = [{
+        key: 1,
+        label: 'Messages',
+    }, {
+        key: 2,
+        label: 'Pending Requests'
+    }, {
+        key: 3,
+        label: 'Status Centre'
+    }, {
+        key: 4,
+        label: 'Log Out'
+    }]
+
+
     return (
         <Navbar className="nav-wrapper">
         <Container>
@@ -14,9 +32,9 @@ export default function Navigation() {
             <Nav.Link className='navigation-link'>Applications</Nav.Link>
           </div>
           <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              <Button variant='success'>Mark Otto</Button>
-            </Navbar.Text>
+            <Dropdown menu={{items}} className='user-dropdown'>
+                <Space><UserOutlined /><span className='username-text'>Username</span></Space>
+            </Dropdown>
           </Navbar.Collapse>
         </Container>
       </Navbar>
