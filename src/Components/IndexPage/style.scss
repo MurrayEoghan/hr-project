@@ -6,7 +6,8 @@
 }
 
 .apply-button:hover {
-    color: #3ba844 !important
+    color: #3ba844 !important;
+    border: 1px solid #3ba844 !important;
 }
 
 .applicant-count-text {
@@ -17,7 +18,8 @@
 .job-listing {
     position: relative;
     top: 5px;
-    margin-bottom: none !important;
+    width: 60vw !important;
+    left: 1px;
 }
 
 .ui.fluid.card {
@@ -25,6 +27,16 @@
 }
 
 .ui.card {
-    margin: 0.5rem !important;
+    margin-right: 0.5rem !important;
     margin-top: 1rem !important;
+}
+
+.listing-container { 
+    max-height: 82vh !important;
+}
+
+.pagination {
+    position: fixed;
+    bottom: 3vh;
+    right: 20vw;
 }
