@@ -5,14 +5,14 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navigation />
       <body className='main-app-body'>
         <Routes>
           <Route path='/' element={<IndexPage />} />
         </Routes>
       </body>
-    </div>
+    </>
   );
 }
 
