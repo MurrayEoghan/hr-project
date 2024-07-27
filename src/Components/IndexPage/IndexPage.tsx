@@ -49,11 +49,7 @@ export default function IndexPage() {
             {listings['listings'] !== undefined ?
             <>
                 <div className='listing-container'>
-                    {_.map(listings['listings'], (v) => {
-                        console.log(v)
-                    let title = `${v.title} @ ${v.company}`
-                    console.log(title)
-                    return (
+                    {_.map(listings['listings'], (v) =>  (
                         <Card fluid className='job-listing' key={v.ID} color='olive'>
                             <CardContent header={<div><span className='header-jobtitle'>{v.title}</span> <span className='header-company'>{v.company}</span></div>}/>
                             <CardContent description={v.desc} />
@@ -61,7 +57,7 @@ export default function IndexPage() {
                                 <span className='applicant-count-text'><Icon name='tasks'/> Applicants: {v.appcount} </span><Button className='apply-button' onClick={() => handleOpen(v)}>Apply</Button>
                             </CardContent>
                         </Card>
-                    )})}
+                    ))}
                 </div>
                 <PostDisplayDrawer company={selectedJob.company} key={selectedJob.id} closeDrawer={() => setOpen(false)} isOpen={open} applicants={selectedJob.appcount} authorId={selectedJob.author} title={selectedJob.title} body={selectedJob.desc} />
                 <Pagination 
