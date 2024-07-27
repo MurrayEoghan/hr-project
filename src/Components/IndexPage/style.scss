@@ -1,5 +1,5 @@
 .apply-button {
-    background-color: #3ba844;
+    // background-color: #3ba844;
     border: #3ba844;
     color: white;
     float: right;
@@ -44,4 +44,13 @@
 .empty-container { 
     min-height: 52vh !important;
     padding: 30vh;
+}
+
+.header-company {
+    float: right;
+    font-size: 1.5rem;
+}
+
+.header-jobtitle {
+    font-size: 1.5rem;
 }

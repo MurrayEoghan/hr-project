@@ -19,7 +19,8 @@ interface PostDisplayProps {
     applicants?: number,
     closeDrawer: any,
     authorId?: number,
-    isOpen: boolean
+    isOpen: boolean,
+    company: string
 }
 
 const {Title, Text} = Typography
@@ -42,7 +43,7 @@ export default function PostDisplayDrawer(props: PostDisplayProps) {
     return <Drawer size={'large'} placement='right' open={props.isOpen} onClose={props.closeDrawer}>
         <Space direction='vertical' size='large' style={{display: 'flex', height: '100%'}}>
             <Title level={2} className='job-title'>{props.title}</Title>
-            <Title level={5} className='job-company'>{author.company}</Title>
+            <Title level={4} className='job-company'>{props.company}</Title>
 
             <Divider>Job Poster</Divider>
             <Card

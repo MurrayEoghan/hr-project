@@ -17,13 +17,17 @@ export default function IndexPage() {
 
     useEffect(() => {
         const getPaginatedListings = async () => {
-            await axios({
-                method: 'post',
-                url: 'http://localhost:3001/listings',
-                data: {limit, offset}
-            }).then((res) => {
-                setListings(res.data)
-            })
+            try {
+                await axios({
+                    method: 'post',
+                    url: 'http://localhost:3001/listings',
+                    data: {limit, offset}
+                }).then((res) => {
+                    setListings(res.data)
+                })
+            } catch (error) {
+                setListings([])
+            }
         }
         getPaginatedListings()
     }, [limit, offset])
@@ -45,17 +49,21 @@ export default function IndexPage() {
             {listings['listings'] !== undefined ?
             <>
                 <div className='listing-container'>
-                    {_.map(listings['listings'], (v) => (
-                        <Card fluid className='job-listing' key={v.ID}>
-                            <CardContent header={v.title}/>
+                    {_.map(listings['listings'], (v) => {
+                        console.log(v)
+                    let title = `${v.title} @ ${v.company}`
+                    console.log(title)
+                    return (
+                        <Card fluid className='job-listing' key={v.ID} color='olive'>
+                            <CardContent header={<div><span className='header-jobtitle'>{v.title}</span> <span className='header-company'>{v.company}</span></div>}/>
                             <CardContent description={v.desc} />
                             <CardContent extra>
                                 <span className='applicant-count-text'><Icon name='tasks'/> Applicants: {v.appcount} </span><Button className='apply-button' onClick={() => handleOpen(v)}>Apply</Button>
                             </CardContent>
                         </Card>
-                    ))}
+                    )})}
                 </div>
-                <PostDisplayDrawer key={selectedJob.id} closeDrawer={() => setOpen(false)} isOpen={open} applicants={selectedJob.appcount} authorId={selectedJob.author} title={selectedJob.title} body={selectedJob.desc} />
+                <PostDisplayDrawer company={selectedJob.company} key={selectedJob.id} closeDrawer={() => setOpen(false)} isOpen={open} applicants={selectedJob.appcount} authorId={selectedJob.author} title={selectedJob.title} body={selectedJob.desc} />
                 <Pagination 
                     showSizeChanger
                     className='pagination'
