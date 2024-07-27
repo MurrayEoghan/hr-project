@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {Card, CardContent, Icon} from 'semantic-ui-react'
 import {Button, Pagination, Empty} from 'antd'
 import type { PaginationProps } from 'antd'
@@ -7,8 +7,10 @@ import "../../theme.scss"
 import "./style.scss"
 import PostDisplayDrawer from '../PostDisplayDrawer/PostDisplayDrawer'
 import axios from 'axios'
+import { AppContext } from '../../store/Provider'
 
 export default function IndexPage() {
+    const state = useContext(AppContext)
     const [open, setOpen] = useState<boolean>(false)
     const [selectedJob, setSelectedJob] = useState<any>({})
     const [listings, setListings] = useState<any>([])
@@ -25,13 +27,14 @@ export default function IndexPage() {
                 }).then((res) => {
                     setListings(res.data)
                 })
+                
             } catch (error) {
                 setListings([])
             }
         }
         getPaginatedListings()
     }, [limit, offset])
-
+    
     const handleOpen = (state) => {
         setSelectedJob(state)
         setOpen(true)
