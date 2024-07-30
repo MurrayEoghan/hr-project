@@ -3,7 +3,12 @@ import {Input, Divider, Space} from 'antd'
 import { UserOutlined, KeyOutlined } from '@ant-design/icons'
 import './styles.scss'
 
-export default function LogIn(props) {
+interface LogInProps {
+    handleUsernameChange: (e: any) => void,
+    handlePasswordChange: (e: any) => void
+}
+
+export default function LogIn(props: LogInProps) {
     const [visiblePass, setVisiblePass] = useState<boolean>(false)
     return (
         <div className='login-wrapper'>

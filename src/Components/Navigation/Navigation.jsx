@@ -1,5 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react'
 import {Container, Nav, Navbar} from 'react-bootstrap'
+import { useNavigate } from 'react-router'
 import { Dropdown, Space, Menu, Button } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 import './style.scss'
@@ -8,9 +9,15 @@ import LogInSignUpContainer from '../LogInSignUp/LogInSignUpContainer'
 
 
 export default function Navigation() {
+    const navigate = useNavigate()
     const [logInModalOpen, setLogInModalOpen] = useState(false)
     const sessionUser = JSON.parse(sessionStorage.getItem('loggedInUser'))
     const state = useContext(AppContext)
+    const handleLogOut = () => {
+      sessionStorage.removeItem('loggedInUser')
+      window.location.reload()
+      navigate('/')
+    }
     const items = [{
       key: 0,
       label: 'Profile'
@@ -26,7 +33,8 @@ export default function Navigation() {
         label: 'Status Centre'
     }, {
         key: 4,
-        label: 'Log Out'
+        label: 'Log Out',
+        onClick: handleLogOut
     }]
 
     useEffect(() => {
