@@ -5,3 +5,7 @@ For now:
 # yarn start-dev
 
 to run
+
+
+VIEW SCREENSHOTS FOLDER.
+UI doesnt function correctly without relevant database which is on my local machine
