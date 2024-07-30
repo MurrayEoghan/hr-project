@@ -83,12 +83,10 @@ export default function LogInSignUpContainer(props: LogInSignUpContainerProps) {
     useEffect(() => {
         setSelectedTab('login')
     }, [props.open])
-    console.log(signUpDetails)
 
     const handleLogInSubmit = async () => {
         if(selectedTab === 'login') {
             try {
-                console.log(loginDetails)
                 await axios({
                     method: 'post',
                     url: 'http://localhost:3001/user',
@@ -111,17 +109,11 @@ export default function LogInSignUpContainer(props: LogInSignUpContainerProps) {
                     url: 'http://localhost:3001/signup',
                     data: signUpDetails
                 }).then(res => {
-                    console.log(res.status)
                     if(res.status === 204) {
                         setSelectedTab('login')
                         setSignUpDetails({fname: '', lname: '', username: '', password: '', passwordConfirm: '', email: '', jobTitle: '', company: '', phone: ''})
                         setOpenToast({status: true, type: 'success'})
 
-                    } else {
-                        if(res.status === 409) {
-                            setOpenToast({status: true, type: 'error'})
-                            console.log('user already exists')
-                        }
                     }
                 })
             } catch (err) {
