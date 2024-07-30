@@ -1,0 +1,22 @@
+.signup-wrapper {
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.small-fields-left {
+    width: 105%;
+    margin-top: 1rem;
+}
+
+.small-fields-right {
+    width: 102%;
+    margin-top: 1rem;
+    margin-left: 0.75rem; 
+}
+
+.full-fields {
+    margin-top: 1rem;
+}
